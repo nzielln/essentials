@@ -1,0 +1,27 @@
+STYLE NOTES
+
+
+FONT
+Heebo
+
+IN HEAD
+<link href="https://fonts.googleapis.com/css?family=Heebo:300,400,500,700,800,900" rel="stylesheet">
+
+@IMPORT
+<style>
+@import url('https://fonts.googleapis.com/css?family=Heebo:300,400,500,700,800,900');
+</style>
+
+font-family: 'Heebo', sans-serif;
+
+
+COLOR
+BLUE: #0133FF, rgba(1, 51, 255, 1)
+WHITE: #ffffff, rgba(255,255,255,1)
+BLACK: #000000, rgba(0,0,0,1)
+
+
+FONT AWESOME 
+<link href="/Users/Ellah/fontawesome.css" rel="stylesheet">
+  <link href="/your-path-to-fontawesome/css/brands.css" rel="stylesheet">
+  <link href="/your-path-to-fontawesome/css/solid.css" rel="stylesheet">

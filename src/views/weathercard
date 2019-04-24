@@ -1,0 +1,63 @@
+initial state {
+  secs: 0,
+  mins: 0,
+  hrs: 0,
+  totalTime: 0,
+  secLeft: 0,
+}
+
+secCount() {
+  this.setState (prevState => ({
+    secs: prevState.secs + 1
+  }))
+}
+minCount() {
+  this.setState (prevState => ({
+    mins: prevState.mins + 60
+  }))
+}
+hrCount() {
+  this.setState (prevState => ({
+    hrs: prevState.hrs + 3600
+  }))
+}
+
+totalCount () {
+  this.setState({
+    totalTime: state.secs + state.mins + state.hrs
+  })
+}
+
+let allseconds = this.totalTime;
+const getTimeLeft() {
+  const now = Date.now();
+  const before = now + allseconds * 1000;
+  newTimer = setInterval(() => {
+  
+  this.secLeft = seconds;
+  let seconds = Math.round((before - Date.now())/1000);
+
+const hrLeft = Math.floor(seconds/3600);
+const minLeft = Math.floor(seconds/60);
+const secondsLeft = seconds % 60;
+
+this.setState({
+  sec: secondsLeft
+  min: minLeft
+  hr: hrLeft
+})
+  })
+}
+
+
+
+
+
+
+
+
+<button id="secplus" onClick={this.secCount}> + </button>
+<button id="minplus" onClick={this.minCount}> + </button>
+<button id="hrplus" onClick={this.hrCount}> + </button>
+
+

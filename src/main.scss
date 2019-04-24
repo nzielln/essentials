@@ -1,0 +1,443 @@
+//font face for Antonio
+@font-face {
+  font-family: "Antonio Regular";
+  font-style: normal;
+  font-weight: normal;
+  src: local("Antonio Regular"), url("FONT/Antonio-Regular.woff") format("woff");
+}
+
+@font-face {
+  font-family: "Antonio Light";
+  font-style: normal;
+  font-weight: normal;
+  src: local("Antonio Light"), url("FONT/Antonio-Light.woff") format("woff");
+}
+
+@font-face {
+  font-family: "Antonio Bold";
+  font-style: normal;
+  font-weight: normal;
+  src: local("Antonio Bold"), url("FONT/Antonio-Bold.woff") format("woff");
+}
+
+$TITLEfontfamily: "Antonio Bold", sans-serif; //NEED TO FIND A NEW FONT!!
+$Smallfont: "Antonio Light", sans-serif;
+$regfont: "Antonio Regular", sans-serif;
+$mainc: #0133ff;
+$textc: #ffffff;
+$blacktext: #000000;
+$largestsize: 72px;
+$titletext: 38px;
+$largetext: 54px;
+$medishtext: 48px;
+$smallest: 14px;
+$smallish: 18px;
+$medium: 24px;
+$boxshadow: -1px 5px 3px rgba(0, 0, 0, 0.25);
+
+body {
+  background-color: $mainc;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+//main page
+.title {
+  font-family: $TITLEfontfamily;
+  font-size: $medium;
+  color: $textc;
+  letter-spacing: 3px;
+  font-weight: 400;
+  margin-top: 40px;
+}
+.top {
+  font-family: $Smallfont;
+  margin-bottom: 80px;
+}
+
+.titlebox {
+  width: 80%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 100px;
+  margin-bottom: 30px;
+}
+
+.symbox {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 0px auto;
+  margin-top: 40px;
+  padding: 0px auto;
+
+  h3 {
+    font-family: $Smallfont;
+    font-weight: 400;
+    color: $textc;
+    font-size: $medium;
+    padding: 0px auto;
+    margin: 0px auto;
+  }
+  .symbol {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 40px;
+    padding: 40px;
+    border: 8px solid $textc;
+    border-radius: 50%;
+    width: 89px;
+    height: 89px;
+    box-shadow: $boxshadow;
+  }
+}
+
+//weather page
+.container {
+  max-width: 950px;
+  position: relative;
+  margin: 0px auto;
+  border: 7px solid red;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.card-wrap {
+  display: flex;
+  position: absolute;
+  .weather-small-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex: 1;
+    min-width: 930px;
+  }
+}
+.weather-top {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.icons {
+  display: flex;
+  justify-content: space-between;
+}
+.weatherbox {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0px auto;
+  .top {
+    margin-bottom: 100px;
+  }
+}
+.weather-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 111px;
+  height: 167px;
+  background-color: $textc;
+  border-radius: 5%;
+  .date,
+  .day {
+    margin: 0px auto;
+    font-family: $TITLEfontfamily;
+    text-transform: uppercase;
+    font-size: $smallish;
+  }
+  .date {
+    font-size: $titletext;
+    margin: 5px auto;
+  }
+}
+
+.everything-weather {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.weather-all-bottom {
+  width: 80%;
+  margin-top: 100px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  .temp {
+    font-family: $TITLEfontfamily;
+    color: $textc;
+    text-align: center;
+  }
+  .high,
+  .low {
+    font-size: $medishtext;
+    margin: 0px auto;
+    margin-top: 40px;
+    margin-bottom: 10px;
+  }
+
+  .average {
+    font-size: $largestsize;
+    margin: 70px auto;
+  }
+  #level {
+    font-family: $Smallfont;
+    font-size: $smallest;
+    letter-spacing: 1px;
+    color: $textc;
+    opacity: 0.8;
+    margin: 0px auto;
+  }
+  .degree-active {
+    font-family: $Smallfont;
+    font-size: $medium;
+    color: $textc;
+    opacity: 1;
+    margin: 0px auto;
+    sup {
+      line-height: 3px;
+      font-size: 24px;
+    }
+  }
+  .degree-active {
+    margin: 0px 10px;
+  }
+  .weather-bottom {
+    display: flex;
+    align-items: center;
+    width: 60%;
+    justify-content: center;
+    .temps {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin: 0px 100px;
+    }
+  }
+  .typedeg {
+    margin-top: 20px;
+  }
+}
+
+//Calculator
+
+.calc-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: $regfont;
+  font-size: $titletext;
+  color: $blacktext;
+  width: 73px;
+  height: 110px;
+  background-color: $textc;
+  outline: 0.1px solid rgba(0, 0, 0, 0.5);
+}
+.calc-button-dark {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: $regfont;
+  font-size: $titletext;
+  color: $blacktext;
+  width: 73px;
+  height: 110px;
+  background-color: $textc;
+  opacity: 0.8;
+  outline: 0.1px solid rgba(0, 0, 0, 0.5);
+}
+.zero-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: $regfont;
+  font-size: $titletext;
+  color: $blacktext;
+  width: 73px * 2;
+  height: 110px;
+  background-color: $textc;
+  outline: 0.1px solid rgba(0, 0, 0, 0.5);
+}
+.answer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 365px;
+  height: 110px;
+  background-color: $textc;
+  outline: 0.1px solid rgba(0, 0, 0, 0.5);
+  margin-top: 10px;
+  #answerspace {
+    width: 90%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+    font-family: $regfont;
+    font-size: $largetext;
+    color: $blacktext;
+  }
+}
+
+.calculator-body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  .top {
+    margin-bottom: 100px;
+  }
+
+  .row1,
+  .row2,
+  .row3,
+  .row4,
+  .row5 {
+    display: flex;
+  }
+  #zero {
+    background-color: $textc;
+  }
+  #toptitle {
+    display: flex;
+    justify-content: center;
+  }
+}
+
+//timer
+.alltimer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  .clock {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 50px;
+  }
+  .theclock {
+    //font
+    font-family: $TITLEfontfamily;
+    font-size: $largestsize;
+    color: $textc;
+    margin: 0px auto;
+    h1 {
+      margin: 0px auto;
+    }
+  }
+  .resets,
+  .theclock,
+  .labels,
+  .minus {
+    display: flex;
+    justify-content: center;
+  }
+  .resets h6,
+  .labels h6,
+  .minus h6 {
+    font-family: $Smallfont;
+    font-size: $smallish;
+    letter-spacing: 1px;
+    color: $textc;
+  }
+  .resets h6 {
+    margin: 0px 80px;
+    margin-bottom: 20px;
+  }
+  .labels h6 {
+    margin: 0px 85px;
+    margin-bottom: 70px;
+  }
+  .minus h6 {
+    margin: 20px 82px;
+  }
+
+  .timer-controls {
+    display: flex;
+    justify-content: center;
+    margin: 0px auto;
+    .circle {
+      display: flex;
+      width: 91px;
+      height: 91px;
+      border-radius: 50%;
+      align-items: center;
+      justify-content: center;
+      border: 3px solid $textc;
+      margin: 0px 50px;
+
+      //font
+      font-family: $Smallfont;
+      font-size: $smallish;
+      color: $textc;
+    }
+  }
+}
+
+button {
+  display: flex;
+  width: 71px;
+  height: 71px;
+  border-radius: 50%;
+  align-items: center;
+  justify-content: center;
+  border: 4px solid $textc;
+  margin: 0px 50px;
+  background-color: rgba(0, 0, 0, 0);
+
+  //font
+  font-family: $Smallfont;
+  font-size: $smallish;
+  color: $textc;
+}
+.timer-controls {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0px auto;
+  button {
+    display: flex;
+    width: 101px;
+    height: 101px;
+    border-radius: 50%;
+    align-items: center;
+    justify-content: center;
+    border: 4px solid $textc;
+    margin: 0px 50px;
+    background-color: rgba(0, 0, 0, 0);
+
+    //font
+    font-family: $Smallfont;
+    font-size: $smallish;
+    color: $textc;
+  }
+}
+
+//stopwatch
+.theclock-top {
+  margin-top: 20px;
+}
+.laps {
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
+.alllaps {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: $medium;
+  font-family: $Smallfont;
+  letter-spacing: 2px;
+  color: $textc;
+  h5 {
+    margin: 10px auto;
+  }
+}
+//todo
