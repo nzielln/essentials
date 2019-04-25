@@ -2,10 +2,10 @@ import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import "./../main.css";
 
-export const CalcButtons = props => {
+export const ClearButtons = props => {
   return (
     <div className="calc-button">
-      <h4 onClick={this.handleCalculate}>{props.buttons}</h4>
+      <h4 onClick={this.handleClearOut}>{props.clearbuttons}</h4>
     </div>
   );
 };

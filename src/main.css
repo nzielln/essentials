@@ -16,12 +16,22 @@
   font-weight: normal;
   src: local("Antonio Bold"), url("FONT/Antonio-Bold.woff") format("woff");
 }
+* {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  margin: 0px;
+  padding: 0px;
+}
+
 body {
   background-color: #0133ff;
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 100%;
+  width: 90%;
 }
 
 .title {
@@ -210,6 +220,71 @@ body {
   margin-top: 20px;
 }
 
+.buttonspace {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.calc-space {
+  margin: 0px 20px;
+  justify-content: flex-start;
+  width: 365px;
+}
+
+.saved-cont {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  width: 365px;
+}
+.saved-cont .saved {
+  font-family: "Antonio Light", sans-serif;
+  font-size: 18px;
+  letter-spacing: 2px;
+  color: #ffffff;
+  margin: 0px auto;
+  width: 100%;
+  text-align: right;
+}
+
+.saved-item-cont {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+  width: 100%;
+}
+
+.saved-item {
+  font-family: "Antonio Light", sans-serif;
+  font-size: 16px;
+  letter-spacing: 3px;
+  color: #ffffff;
+  margin: 10px auto;
+  text-align: right;
+  width: 100%;
+}
+
+.save {
+  display: flex;
+  justify-content: flex-end;
+  margin: 50px auto;
+  border: 3px solid #ffffff;
+}
+
+#save {
+  font-family: "Antonio Regular", sans-serif;
+  font-size: 18px;
+  letter-spacing: 2px;
+  color: #000000;
+  margin: 0px auto;
+  padding: 5px 7px;
+  background-color: #ffffff;
+  width: 100%;
+  text-align: right;
+}
+
 .calc-button {
   display: flex;
   justify-content: center;
@@ -220,21 +295,9 @@ body {
   width: 73px;
   height: 110px;
   background-color: #ffffff;
-  outline: 0.1px solid rgba(0, 0, 0, 0.5);
-}
-
-.calc-button-dark {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-family: "Antonio Regular", sans-serif;
-  font-size: 38px;
-  color: #000000;
-  width: 73px;
-  height: 110px;
-  background-color: #ffffff;
-  opacity: 0.8;
-  outline: 0.1px solid rgba(0, 0, 0, 0.5);
+  outline: 0.1px solid #626262;
+  margin: 0px auto;
+  cursor: pointer;
 }
 
 .zero-button {
@@ -248,6 +311,23 @@ body {
   height: 110px;
   background-color: #ffffff;
   outline: 0.1px solid rgba(0, 0, 0, 0.5);
+  margin: 0px auto;
+  cursor: pointer;
+}
+
+.zero-button-equal {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: "Antonio Regular", sans-serif;
+  font-size: 38px;
+  color: #000000;
+  width: 219px;
+  height: 110px;
+  background-color: #ffffff;
+  outline: 0.1px solid rgba(0, 0, 0, 0.5);
+  margin: 0px auto;
+  cursor: pointer;
 }
 
 .answer {
@@ -281,9 +361,12 @@ body {
 .calculator-body .row1,
 .calculator-body .row2,
 .calculator-body .row3,
-.calculator-body .row4,
-.calculator-body .row5 {
+.calculator-body .row4 {
   display: flex;
+  margin: 0px auto;
+}
+.calculator-body .row4 {
+  width: 100%;
 }
 .calculator-body #zero {
   background-color: #ffffff;
@@ -415,6 +498,52 @@ button {
 }
 .alllaps h5 {
   margin: 10px auto;
+}
+
+.alltodo {
+  width: 100%;
+  height: 100%;
+}
+
+.alltodo,
+.todo,
+.todo-space,
+.todo-input {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+#todolist {
+  list-style-type: none;
+}
+
+.todo h3 {
+  font-size: 24px;
+  font-family: "Antonio Light", sans-serif;
+  letter-spacing: 2px;
+  color: #ffffff;
+}
+
+.complete {
+  margin-top: 50px;
+}
+
+input {
+  border: none;
+  border-bottom: 2px solid #ffffff;
+  width: 0%;
+  background-color: rgba(0, 0, 0, 0);
+}
+
+input[type=text],
+input[placeholder="add task"] {
+  text-align: center;
+  font-size: 18px;
+  font-family: "Antonio Light", sans-serif;
+  letter-spacing: 2px;
+  color: rgba(255, 255, 255, 0);
 }
 
 /*# sourceMappingURL=main.css.map */

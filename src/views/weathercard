@@ -61,3 +61,35 @@ this.setState({
 <button id="hrplus" onClick={this.hrCount}> + </button>
 
 
+
+
+
+
+class Stopwatch extends React.Component {
+  render() {
+    return (
+      <div className="alltimer">
+        <h2 className="title top">stopwatch</h2>
+        <StopClock />
+        <div className="timer-controls">
+          <ControlButtons
+            control={<FontAwesomeIcon icon="play" color="white" size="1x" />}
+          />
+          <ControlButtons
+            control={<FontAwesomeIcon icon="pause" color="white" size="1x" />}
+          />
+          <ControlButtons
+            control={<FontAwesomeIcon icon="stop" color="white" size="1x" />}
+          />
+        </div>
+        <div className="laps">
+          <Laps hr="00" min="00" sec="00" />
+          <Laps hr="00" min="00" sec="00" />
+          <Laps hr="00" min="00" sec="00" />
+        </div>
+      </div>
+    );
+  }
+}
+
+export default Stopwatch;

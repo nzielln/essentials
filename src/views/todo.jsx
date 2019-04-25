@@ -18,6 +18,9 @@ class Todo extends React.Component {
           <div className="todo-input">
             <input type="text" placeholder="add task" />
           </div>
+          <div className="complete todo">
+            <h3>completed</h3>
+          </div>
         </div>
       </div>
     );

@@ -34,13 +34,21 @@ $smallest: 14px;
 $smallish: 18px;
 $medium: 24px;
 $boxshadow: -1px 5px 3px rgba(0, 0, 0, 0.25);
-
+* {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  margin: 0px;
+  padding: 0px;
+}
 body {
   background-color: $mainc;
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 100%;
+  width: 90%;
 }
 
 //main page
@@ -228,6 +236,65 @@ body {
 }
 
 //Calculator
+.buttonspace {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+.calc-space {
+  margin: 0px 20px;
+  justify-content: flex-start;
+  width: 365px;
+}
+.saved-cont {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  width: 365px;
+  .saved {
+    font-family: $Smallfont;
+    font-size: $smallish;
+    letter-spacing: 2px;
+    color: $textc;
+    margin: 0px auto;
+    width: 100%;
+    text-align: right;
+  }
+}
+.saved-item-cont {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+  width: 100%;
+}
+.saved-item {
+  font-family: $Smallfont;
+  font-size: 16px;
+  letter-spacing: 3px;
+  color: $textc;
+  margin: 10px auto;
+  text-align: right;
+  width: 100%;
+}
+.save {
+  display: flex;
+  justify-content: flex-end;
+  margin: 50px auto;
+  border: 3px solid $textc;
+}
+
+#save {
+  font-family: $regfont;
+  font-size: $smallish;
+  letter-spacing: 2px;
+  color: $blacktext;
+  margin: 0px auto;
+  padding: 5px 7px;
+  background-color: $textc;
+  width: 100%;
+  text-align: right;
+}
 
 .calc-button {
   display: flex;
@@ -239,21 +306,11 @@ body {
   width: 73px;
   height: 110px;
   background-color: $textc;
-  outline: 0.1px solid rgba(0, 0, 0, 0.5);
+  outline: 0.1px solid rgb(98, 98, 98);
+  margin: 0px auto;
+  cursor: pointer;
 }
-.calc-button-dark {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-family: $regfont;
-  font-size: $titletext;
-  color: $blacktext;
-  width: 73px;
-  height: 110px;
-  background-color: $textc;
-  opacity: 0.8;
-  outline: 0.1px solid rgba(0, 0, 0, 0.5);
-}
+
 .zero-button {
   display: flex;
   justify-content: center;
@@ -265,12 +322,29 @@ body {
   height: 110px;
   background-color: $textc;
   outline: 0.1px solid rgba(0, 0, 0, 0.5);
+  margin: 0px auto;
+  cursor: pointer;
 }
+.zero-button-equal {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: $regfont;
+  font-size: $titletext;
+  color: $blacktext;
+  width: 73px * 3;
+  height: 110px;
+  background-color: $textc;
+  outline: 0.1px solid rgba(0, 0, 0, 0.5);
+  margin: 0px auto;
+  cursor: pointer;
+}
+
 .answer {
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 365px;
+  width: 73px * 5;
   height: 110px;
   background-color: $textc;
   outline: 0.1px solid rgba(0, 0, 0, 0.5);
@@ -290,6 +364,7 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
+
   .top {
     margin-bottom: 100px;
   }
@@ -297,9 +372,12 @@ body {
   .row1,
   .row2,
   .row3,
-  .row4,
-  .row5 {
+  .row4 {
     display: flex;
+    margin: 0px auto;
+  }
+  .row4 {
+    width: 100%;
   }
   #zero {
     background-color: $textc;
@@ -441,3 +519,45 @@ button {
   }
 }
 //todo
+
+.alltodo {
+  width: 100%;
+  height: 100%;
+}
+.alltodo,
+.todo,
+.todo-space,
+.todo-input {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+#todolist {
+  list-style-type: none;
+}
+.todo h3 {
+  font-size: $medium;
+  font-family: $Smallfont;
+  letter-spacing: 2px;
+  color: $textc;
+}
+
+.complete {
+  margin-top: 50px;
+}
+
+input {
+  border: none;
+  border-bottom: 2px solid $textc;
+  width: 0%;
+  background-color: rgba(0, 0, 0, 0);
+}
+input[type="text"],
+input[placeholder="add task"] {
+  text-align: center;
+  font-size: $smallish;
+  font-family: $Smallfont;
+  letter-spacing: 2px;
+  color: rgba(255, 255, 255, 0);
+}
