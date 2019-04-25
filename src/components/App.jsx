@@ -14,33 +14,33 @@ class App extends React.Component {
         <div className="icons">
           <div className="page-icons">
             <HomeButton
-              sym={<FontAwesomeIcon icon="cloud" color="white" size="4x" />}
+              sym={<FontAwesomeIcon icon="cloud" color="white" size="2x" />}
               pagetitle="weather"
             />
           </div>
           <div className="page-icons">
             <HomeButton
               sym={
-                <FontAwesomeIcon icon="calculator" color="white" size="4x" />
+                <FontAwesomeIcon icon="calculator" color="white" size="2x" />
               }
               pagetitle="calculator"
             />
           </div>
           <div className="page-icons">
             <HomeButton
-              sym={<FontAwesomeIcon icon="clock" color="white" size="4x" />}
+              sym={<FontAwesomeIcon icon="clock" color="white" size="2x" />}
               pagetitle="timer"
             />
           </div>
           <div className="page-icons">
             <HomeButton
-              sym={<FontAwesomeIcon icon="stopwatch" color="white" size="4x" />}
+              sym={<FontAwesomeIcon icon="stopwatch" color="white" size="2x" />}
               pagetitle="stopwatch"
             />
           </div>
           <div className="page-icons">
             <HomeButton
-              sym={<FontAwesomeIcon icon="list-alt" color="white" size="4x" />}
+              sym={<FontAwesomeIcon icon="list-alt" color="white" size="2x" />}
               pagetitle="to do"
             />
           </div>

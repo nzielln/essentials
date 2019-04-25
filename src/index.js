@@ -37,7 +37,7 @@ import App from "./components/App.jsx";
 //import Calc from "./views/calc.jsx";
 //import Timer from "./views/timer.jsx";
 //import Stopwatch from "./views/stopwatch.jsx";
-import Todo from "./views/todo.jsx";
+//import Todo from "./views/todo.jsx";
 
 library.add(
   faCircle,
@@ -79,7 +79,7 @@ class Main extends React.Component {
   render() {
     return (
       <div>
-        <Todo />
+        <App />
       </div>
       //cards.map( )
     );
