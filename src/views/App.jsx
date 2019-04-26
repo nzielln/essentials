@@ -12,7 +12,7 @@ class App extends React.Component {
           <Link to="/" style={{ textDecoration: 'none' }}>
             <FontAwesomeIcon icon="circle" color="white" size="lg" />
           </Link>
-          <Title title="Essentials Things" />
+          <Title title="Essentials" />
         </div>
         <div className="icons">
           <Link to="/weather" style={{ textDecoration: 'none' }}>
