@@ -1,6 +1,7 @@
 import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import "./../main.css";
+import { Link } from 'react-router-dom';
 
 class Timer extends React.Component {
   constructor(props) {
@@ -205,6 +206,11 @@ class Timer extends React.Component {
 
     return (
       <div className="alltimer">
+        <div className="home" >
+          <Link to="/" style={{ textDecoration: 'none' }}>
+            <FontAwesomeIcon icon="circle" color="white" size="lg" />
+          </Link>
+        </div>
         <h2 className="title top">timer</h2>
         <div className="clock">
           <div className="resets">
@@ -253,7 +259,7 @@ class Timer extends React.Component {
             <FontAwesomeIcon icon="redo" color="white" size="1x" />
           </button>
         </div>
-      </div>
+      </div >
     );
   }
 }

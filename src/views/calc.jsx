@@ -6,6 +6,7 @@ import { ClearButtons } from "../components/clearbtn.jsx";
 import { ZeroButtons } from "../components/buttonzero.jsx";
 import { AnswerButton } from "../components/answer.jsx";
 import * as math from "mathjs";
+import { Link } from 'react-router-dom';
 
 class Calc extends React.Component {
   constructor(props) {
@@ -53,6 +54,11 @@ class Calc extends React.Component {
   render() {
     return (
       <div className="calculator-body">
+        <div className="home" >
+          <Link to="/" style={{ textDecoration: 'none' }}>
+            <FontAwesomeIcon icon="circle" color="white" size="lg" />
+          </Link>
+        </div>
         <h2 className="title top">calculator</h2>
         <div className="buttonspace">
           <div className="calc-space">
@@ -177,7 +183,7 @@ class Calc extends React.Component {
             </div>
           </div>
         </div>
-      </div>
+      </div >
     );
   }
 }

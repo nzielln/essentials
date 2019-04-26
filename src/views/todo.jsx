@@ -2,6 +2,7 @@ import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import "./../main.css";
 import { TodoItem } from "./todoitem.jsx"
+import { Link } from 'react-router-dom';
 
 window.id = 0;
 class Todo extends React.Component {
@@ -67,6 +68,11 @@ class Todo extends React.Component {
   render() {
     return (
       <div className="alltodo">
+        <div className="home" >
+          <Link to="/" style={{ textDecoration: 'none' }}>
+            <FontAwesomeIcon icon="circle" color="white" size="lg" />
+          </Link>
+        </div>
         <h2 className="title top">to do</h2>
 
         <div className="todo-space">
@@ -86,7 +92,7 @@ class Todo extends React.Component {
             </form>
           </div>
         </div>
-      </div>
+      </div >
     );
   }
 }

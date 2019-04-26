@@ -4,6 +4,7 @@ import "./../main.css";
 import WeatherCards from "../components/weathercards.jsx";
 import WeatherBottom from "../components/weatherbottom.jsx";
 import { networkInterfaces } from "os";
+import { Link } from 'react-router-dom';
 
 class Weather extends React.Component {
   constructor(props) {
@@ -88,11 +89,16 @@ class Weather extends React.Component {
     const today = new Date();
     const date = today.getDate();
     const theday = today.getDay();
-    const dayName = days[2];
+    const dayName = days[theday];
     console.log(dayName);
 
     return (
       <div className="weatherbox">
+        <div className="home" >
+          <Link to="/" style={{ textDecoration: 'none' }}>
+            <FontAwesomeIcon icon="circle" color="white" size="lg" />
+          </Link>
+        </div>
         <h2 className="title top">weather</h2>
         <WeatherCards iconcard={iconDark} thedate={date} day={dayName} />
         <WeatherBottom
@@ -101,7 +107,7 @@ class Weather extends React.Component {
           temperature={this.state.temperature}
           temperatureHigh={this.state.temperatureHigh}
         />
-      </div>
+      </div >
     );
   }
 }

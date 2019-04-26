@@ -1,6 +1,7 @@
 import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import "./../main.css";
+import { Link } from 'react-router-dom';
 
 class Stopwatch extends React.Component {
   constructor(props) {
@@ -75,10 +76,10 @@ class Stopwatch extends React.Component {
       laps: [
         ...prevState.laps,
         this.state.zeromin +
-          this.state.min +
-          ":" +
-          this.state.zerosec +
-          this.state.sec
+        this.state.min +
+        ":" +
+        this.state.zerosec +
+        this.state.sec
       ]
     }));
     let arr = this.state.laps;
@@ -119,6 +120,11 @@ class Stopwatch extends React.Component {
 
     return (
       <div className="alltimer">
+        <div className="home" >
+          <Link to="/" style={{ textDecoration: 'none' }}>
+            <FontAwesomeIcon icon="circle" color="white" size="lg" />
+          </Link>
+        </div>
         <h2 className="title top">stopwatch</h2>
         <div className="clock-stop">
           <div className="theclock" id="the-clock">
@@ -158,7 +164,7 @@ class Stopwatch extends React.Component {
         <button id="clear" onClick={this.clearLaps}>
           <FontAwesomeIcon icon="times" color="white" size="2x" />
         </button>
-      </div>
+      </div >
     );
   }
 }

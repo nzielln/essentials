@@ -32,12 +32,15 @@ import {
   faTimes
 } from "@fortawesome/free-solid-svg-icons";
 import "./main.css";
-import App from "./components/App.jsx";
+import App from "./views/App.jsx";
+import { Route, Link, BrowserRouter } from 'react-router-dom'
 //import Weather from "./views/weather.js";
 //import Calc from "./views/calc.jsx";
 //import Timer from "./views/timer.jsx";
 //import Stopwatch from "./views/stopwatch.jsx";
 //import Todo from "./views/todo.jsx";
+import Routing from "./routing.jsx";
+import Weather from "./views/weather";
 
 library.add(
   faCircle,
@@ -68,9 +71,7 @@ library.add(
   faPlus,
   faTimes
 );
-export const keepData = () => {
-  //just for getting data
-};
+
 class Main extends React.Component {
   constructor(props) {
     super(props);
@@ -78,11 +79,8 @@ class Main extends React.Component {
 
   render() {
     return (
-      <div>
-        <App />
-      </div>
-      //cards.map( )
-    );
+      <Routing />
+    )
 
     //<Weather /><Stopwatch />
     //<Timer />;
