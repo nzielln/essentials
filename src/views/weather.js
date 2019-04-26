@@ -37,8 +37,8 @@ class Weather extends React.Component {
             this.setState({
               icon: ourdata.daily.data[0].icon,
               temperature: ourdata.currently.temperature,
-              temperatureHigh: ourdata.daily.data[0].temperatureHigh,
-              temperatureLow: ourdata.daily.data[0].temperatureLow
+              temperatureHigh: ourdata.daily.data[0].temperatureMax,
+              temperatureLow: ourdata.daily.data[0].temperatureMin
             });
           });
       });
