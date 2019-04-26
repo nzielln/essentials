@@ -4,7 +4,7 @@ import { library } from "@fortawesome/fontawesome-svg-core";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import "./main.css";
 import App from "./views/App.jsx";
-import { Route, Link, BrowserRouter, Switch, Redirect } from 'react-router-dom';
+import { Route, Link, HashRouter, Switch, Redirect } from 'react-router-dom';
 import Weather from "./views/weather.js";
 import Calc from "./views/calc.jsx";
 import Timer from "./views/timer.jsx";
@@ -15,7 +15,7 @@ import NotFound from "./views/404.jsx";
 class Routing extends React.Component {
     render() {
         return (
-            <BrowserRouter>
+            <HashRouter>
                 <div>
                     <Switch>
                         <Route exact path="/" component={App} />
@@ -28,7 +28,7 @@ class Routing extends React.Component {
                         <Redirect to="/404" />
                     </Switch>
                 </div>
-            </BrowserRouter>
+            </HashRouter>
         )
     }
 
