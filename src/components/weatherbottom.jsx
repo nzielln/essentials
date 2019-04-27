@@ -22,9 +22,6 @@ class WeatherBottom extends React.Component {
         </div>
         <div className="typedeg">
           <span className="degree-active">
-            <sup>
-              <sup>˚</sup>
-            </sup>
             F
           </span>
         </div>

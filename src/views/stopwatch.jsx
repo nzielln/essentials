@@ -141,7 +141,7 @@ class Stopwatch extends React.Component {
             <h6>s</h6>
           </div>
 
-          <div className="timer-controls">
+          <div className="timer-controls" id="stop-cont">
             <button id="play" onClick={this.startTimer}>
               <FontAwesomeIcon icon="play" color="white" size="1x" />
             </button>

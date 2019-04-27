@@ -33,6 +33,26 @@ body {
 #root {
   width: 90%;
 }
+@media (max-width: 600px) {
+  #root {
+    width: 100%;
+  }
+}
+@media (max-width: 600px) {
+  #root {
+    width: 100%;
+  }
+}
+@media (max-width: 768px) {
+  #root {
+    width: 100%;
+  }
+}
+@media (max-width: 996px) {
+  #root {
+    width: 100%;
+  }
+}
 
 .home {
   width: 100%;
@@ -40,6 +60,14 @@ body {
   justify-content: flex-start;
   align-items: flex-start;
   margin-top: 20px;
+  margin-left: 40px;
+}
+@media (max-width: 996px) {
+  .home {
+    justify-content: center;
+    align-items: center;
+    margin: 50px auto;
+  }
 }
 
 .notfound {
@@ -124,28 +152,6 @@ body {
   box-shadow: -1px 5px 3px rgba(0, 0, 0, 0.25);
 }
 
-.container {
-  max-width: 950px;
-  position: relative;
-  margin: 0px auto;
-  border: 7px solid red;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.card-wrap {
-  display: flex;
-  position: absolute;
-}
-.card-wrap .weather-small-box {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  flex: 1;
-  min-width: 930px;
-}
-
 .weather-top {
   display: flex;
   align-items: center;
@@ -155,6 +161,12 @@ body {
 .icons {
   display: flex;
   justify-content: space-between;
+}
+@media (max-width: 996px) {
+  .icons {
+    width: 100%;
+    flex-direction: column;
+  }
 }
 
 .weatherbox {
@@ -215,9 +227,20 @@ body {
   margin-top: 40px;
   margin-bottom: 10px;
 }
+@media (max-width: 996px) {
+  .weather-all-bottom .high,
+.weather-all-bottom .low {
+    font-size: 24px;
+  }
+}
 .weather-all-bottom .average {
   font-size: 72px;
   margin: 70px auto;
+}
+@media (max-width: 996px) {
+  .weather-all-bottom .average {
+    font-size: 48px;
+  }
 }
 .weather-all-bottom #level {
   font-family: "Antonio Light", sans-serif;
@@ -234,6 +257,11 @@ body {
   opacity: 1;
   margin: 0px auto;
 }
+@media (max-width: 996px) {
+  .weather-all-bottom .degree-active {
+    font-size: 24px;
+  }
+}
 .weather-all-bottom .degree-active sup {
   line-height: 3px;
   font-size: 24px;
@@ -244,7 +272,7 @@ body {
 .weather-all-bottom .weather-bottom {
   display: flex;
   align-items: center;
-  width: 60%;
+  width: 50%;
   justify-content: center;
 }
 .weather-all-bottom .weather-bottom .temps {
@@ -253,14 +281,30 @@ body {
   align-items: center;
   margin: 0px 100px;
 }
+@media (max-width: 768px) {
+  .weather-all-bottom .weather-bottom .temps {
+    margin: 0px 60px;
+  }
+}
 .weather-all-bottom .typedeg {
   margin-top: 20px;
+}
+@media (max-width: 600px) {
+  .weather-all-bottom {
+    width: 100%;
+  }
 }
 
 .buttonspace {
   display: flex;
   justify-content: center;
   width: 100%;
+}
+@media (max-width: 768px) {
+  .buttonspace {
+    flex-direction: column;
+    align-items: center;
+  }
 }
 
 .calc-space {
@@ -275,6 +319,12 @@ body {
   align-items: flex-end;
   width: 365px;
 }
+@media (max-width: 768px) {
+  .saved-cont {
+    margin-top: 20px;
+    align-items: center;
+  }
+}
 .saved-cont .saved {
   font-family: "Antonio Light", sans-serif;
   font-size: 18px;
@@ -284,16 +334,25 @@ body {
   width: 100%;
   text-align: right;
 }
-
-.saved-item-cont {
+@media (max-width: 768px) {
+  .saved-cont .saved {
+    margin-top: 60px;
+    text-align: center;
+  }
+}
+.saved-cont .saved-item-cont {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: flex-end;
   width: 100%;
 }
-
-.saved-item {
+@media (max-width: 768px) {
+  .saved-cont .saved-item-cont {
+    align-items: center;
+  }
+}
+.saved-cont .saved-item {
   font-family: "Antonio Light", sans-serif;
   font-size: 16px;
   letter-spacing: 3px;
@@ -302,15 +361,19 @@ body {
   text-align: right;
   width: 100%;
 }
-
-.save {
+@media (max-width: 768px) {
+  .saved-cont .saved-item {
+    text-align: center;
+    margin-top: 15px;
+  }
+}
+.saved-cont .save {
   display: flex;
   justify-content: flex-end;
   margin: 50px auto;
   border: 3px solid #ffffff;
 }
-
-#save {
+.saved-cont #save {
   font-family: "Antonio Regular", sans-serif;
   font-size: 18px;
   letter-spacing: 2px;
@@ -319,7 +382,6 @@ body {
   padding: 5px 7px;
   background-color: #ffffff;
   width: 100%;
-  text-align: right;
 }
 
 .calc-button {
@@ -375,7 +437,6 @@ body {
   height: 110px;
   background-color: #ffffff;
   outline: 0.1px solid rgba(0, 0, 0, 0.5);
-  margin-top: 10px;
 }
 .answer #answerspace {
   width: 90%;
@@ -412,6 +473,11 @@ body {
   display: flex;
   justify-content: center;
 }
+@media (max-width: 768px) {
+  .calculator-body {
+    width: 100%;
+  }
+}
 
 .alltimer {
   display: flex;
@@ -429,6 +495,12 @@ body {
   font-size: 72px;
   color: #ffffff;
   margin: 0px auto;
+  width: 100%;
+}
+@media (max-width: 600px) {
+  .alltimer .theclock {
+    font-size: 54px;
+  }
 }
 .alltimer .theclock h1 {
   margin: 0px auto;
@@ -448,21 +520,60 @@ body {
   letter-spacing: 1px;
   color: #ffffff;
 }
+@media (max-width: 600px) {
+  .alltimer .resets h6,
+.alltimer .labels h6,
+.alltimer .minus h6 {
+    font-size: 14px;
+  }
+}
 .alltimer .resets h6 {
   margin: 0px 80px;
   margin-bottom: 20px;
+}
+@media (max-width: 600px) {
+  .alltimer .resets h6 {
+    margin: 0px 65px;
+  }
 }
 .alltimer .labels h6 {
   margin: 0px 85px;
   margin-bottom: 70px;
 }
+@media (max-width: 600px) {
+  .alltimer .labels h6 {
+    margin: 0px 65px;
+  }
+}
 .alltimer .minus h6 {
   margin: 20px 82px;
 }
+@media (max-width: 600px) {
+  .alltimer .minus h6 {
+    margin: 20px 65px;
+  }
+}
 .alltimer .timer-controls {
+  width: 100%;
   display: flex;
   justify-content: center;
   margin: 0px auto;
+}
+@media (max-width: 600px) {
+  .alltimer .timer-controls {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+.alltimer .timer-controls button {
+  margin: 0px auto;
+}
+@media (max-width: 600px) {
+  .alltimer .timer-controls button {
+    margin: 20px auto;
+    width: 75px;
+    height: 75px;
+  }
 }
 .alltimer .timer-controls .circle {
   display: flex;
@@ -473,9 +584,6 @@ body {
   justify-content: center;
   border: 3px solid #ffffff;
   margin: 0px 50px;
-  font-family: "Antonio Light", sans-serif;
-  font-size: 18px;
-  color: #ffffff;
 }
 
 button {
@@ -509,9 +617,6 @@ button {
   border: 4px solid #ffffff;
   margin: 0px 50px;
   background-color: rgba(0, 0, 0, 0);
-  font-family: "Antonio Light", sans-serif;
-  font-size: 18px;
-  color: #ffffff;
 }
 
 .theclock-top {
@@ -535,6 +640,19 @@ button {
 }
 .alllaps h5 {
   margin: 10px auto;
+}
+
+#stop-cont {
+  margin-top: 50px;
+}
+
+#play, #stop, #pause, #get, #reset {
+  margin: 0px 30px;
+}
+@media (max-width: 600px) {
+  #play, #stop, #pause, #get, #reset {
+    margin: 20px auto;
+  }
 }
 
 .alltodo {

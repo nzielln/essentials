@@ -20,38 +20,75 @@
   src: local("Antonio Bold"), url("FONT/Antonio-Bold.woff") format("woff");
 }
 
-$TITLEfontfamily: "Antonio Bold", sans-serif; //NEED TO FIND A NEW FONT!!
-$Smallfont: "Antonio Light", sans-serif;
-$regfont: "Antonio Regular", sans-serif;
-$mainc: #0133ff;
-$textc: #ffffff;
-$blacktext: #000000;
-$largestsize: 72px;
-$titletext: 38px;
-$largetext: 54px;
-$medishtext: 48px;
-$smallest: 14px;
-$smallish: 18px;
-$medium: 24px;
+$bold: "Antonio Bold", sans-serif; //NEED TO FIND A NEW FONT!!
+$light: "Antonio Light", sans-serif;
+$regular: "Antonio Regular", sans-serif;
+$blue: #0133ff;
+$white: #ffffff;
+$black: #000000;
+$first: 72px;
+$fourth: 38px;
+$second: 54px;
+$third: 48px;
+$seven: 14px;
+$six: 18px;
+$fifth: 24px;
 $boxshadow: -1px 5px 3px rgba(0, 0, 0, 0.25);
+
+$phone-width: 600px;
+$small-width: 768px;
+$med-width: 996px;
+$large-width: 1200px;
+
+
+@mixin size($screen) { 
+  @if $screen == phone {
+    @media (max-width: $phone-width) {@content;}
+  } @else if $screen == tablet {
+    @media (max-width: $small-width) {
+      @content;}
+  } @else if $screen == small-laptop {
+    @media (max-width: $med-width) {
+      @content;}
+  } @else if $screen == laptop {
+    @media (max-width: $large-width) {
+      @content;}
+  }
+  
+}
+
 
 *{
   margin: 0px;
   padding: 0px;
-  
-  
+
 }
 body {
-  background-color: $mainc;
+  background-color: $blue;
   display: flex;
   flex-direction: column;
   align-items: center;
   width: 100%;
   height: auto;
+  
 }
 
 #root {
   width: 90%;
+
+  @include size(phone) {
+    width: 100%;
+    }
+    @include size(phone) {
+      width: 100%;
+      }
+      @include size(tablet) {
+        width: 100%;
+        }
+        @include size(small-laptop) {
+          width: 100%;
+          }
+  
 }
 
 .home {
@@ -60,23 +97,35 @@ body {
   justify-content: flex-start;
   align-items: flex-start;
   margin-top: 20px;
+  margin-left: 40px;
+  @include size(small-laptop) {
+    justify-content: center;
+    align-items: center;
+    margin: 50px auto;
+    }
+  
 }
 
 //404 page 
 .notfound {
   
-    font-family: $regfont;
-    font-size: $medium;
-    color: $textc;
+    font-family: $regular;
+    font-size: $fifth;
+    color: $white;
     letter-spacing: 3px;
     font-weight: 400;
     margin-top: 150px;
     text-align: center;
     #bold {
-      font-size: $largetext;
-     
+      font-size: $second;
+      @include size(maxphone) {
+        font-size: $fourth;
+        }
     }
-  
+    @include size(maxphone) {
+      font-size: $six;
+      }
+    
 }
 
 .notfoundlink {
@@ -94,15 +143,17 @@ body {
   width: 100%;
 }
 .title {
-  font-family: $TITLEfontfamily;
-  font-size: $medium;
-  color: $textc;
+  font-family: $bold;
+  font-size: $fifth;
+  color: $white;
   letter-spacing: 3px;
   font-weight: 400;
   margin-top: 40px;
+
 }
 .top {
-  font-family: $Smallfont;
+  font-family: $light
+;
   margin-bottom: 80px;
 }
 
@@ -113,7 +164,12 @@ body {
   align-items: center;
   margin-top: 100px;
   margin-bottom: 30px;
-}
+  @include size(maxphone) {
+    width: 100%;
+  }
+    
+    }
+
 
 .symbox {
   display: flex;
@@ -126,11 +182,12 @@ body {
   width: 80%;
 
   h3 {
-    font-family: $Smallfont;
+    font-family: $light
+  ;
     font-weight: 400;
-    color: $textc;
+    color: $white;
     letter-spacing: 1.2px;
-    font-size: $smallish;
+    font-size: $six;
     padding: 0px auto;
     margin: 0px auto;
   }
@@ -140,7 +197,7 @@ body {
     align-items: center;
     margin: 30px;
     padding: 40px;
-    border: 4px solid $textc;
+    border: 4px solid $white;
     border-radius: 50%;
     width: 20px;
     height: 20px;
@@ -149,27 +206,7 @@ body {
 }
 
 //weather page
-.container {
-  max-width: 950px;
-  position: relative;
-  margin: 0px auto;
-  border: 7px solid red;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
 
-.card-wrap {
-  display: flex;
-  position: absolute;
-  .weather-small-box {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    flex: 1;
-    min-width: 930px;
-  }
-}
 .weather-top {
   display: flex;
   align-items: center;
@@ -178,6 +215,12 @@ body {
 .icons {
   display: flex;
   justify-content: space-between;
+          @include size(small-laptop) {
+            width: 100%;
+            flex-direction: column;
+            }
+      
+  
 }
 .weatherbox {
   width: 100%;
@@ -196,19 +239,22 @@ body {
   justify-content: center;
   width: 111px;
   height: 167px;
-  background-color: $textc;
+  background-color: $white;
   border-radius: 5%;
   .date,
   .day {
     margin: 0px auto;
-    font-family: $TITLEfontfamily;
+    font-family: $bold;
     text-transform: uppercase;
-    font-size: $smallish;
+    font-size: $six;
   }
   .date {
-    font-size: $titletext;
+    font-size: $fourth;
     margin: 5px auto;
   }
+  
+    
+
 }
 
 .everything-weather {
@@ -223,36 +269,46 @@ body {
   flex-direction: column;
   align-items: center;
   .temp {
-    font-family: $TITLEfontfamily;
-    color: $textc;
+    font-family: $bold;
+    color: $white;
     text-align: center;
+
   }
   .high,
   .low {
-    font-size: $medishtext;
+    font-size: $third;
     margin: 0px auto;
     margin-top: 40px;
     margin-bottom: 10px;
+    @include size(small-laptop) {
+      font-size: $fifth;
+       }
   }
 
   .average {
-    font-size: $largestsize;
+    font-size: $first;
     margin: 70px auto;
+    @include size(small-laptop) {
+      font-size: $third;
+       }
   }
   #level {
-    font-family: $Smallfont;
-    font-size: $smallest;
+    font-family: $light;
+    font-size: $seven;
     letter-spacing: 1px;
-    color: $textc;
+    color: $white;
     opacity: 0.8;
     margin: 0px auto;
   }
   .degree-active {
-    font-family: $Smallfont;
-    font-size: $medium;
-    color: $textc;
+    font-family: $light;
+    font-size: $fifth;
+    color: $white;
     opacity: 1;
     margin: 0px auto;
+    @include size(small-laptop) {
+      font-size: $fifth;
+       }
     sup {
       line-height: 3px;
       font-size: 24px;
@@ -264,18 +320,25 @@ body {
   .weather-bottom {
     display: flex;
     align-items: center;
-    width: 60%;
+    width: 50%;
     justify-content: center;
+    
     .temps {
       display: flex;
       flex-direction: column;
       align-items: center;
       margin: 0px 100px;
+      @include size(tablet) {
+        margin: 0px 60px;        
+      }
     }
   }
   .typedeg {
     margin-top: 20px;
   }
+  @include size(phone) {
+    width: 100%;
+    }
 }
 
 //Calculator
@@ -283,6 +346,10 @@ body {
   display: flex;
   justify-content: center;
   width: 100%;
+  @include size(tablet) {
+    flex-direction: column;
+    align-items: center;
+    }
 }
 .calc-space {
   margin: 0px 20px;
@@ -294,15 +361,22 @@ body {
   flex-direction: column;
   align-items: flex-end;
   width: 365px;
+  @include size(tablet) {
+    margin-top: 20px;
+  align-items: center;
+    }
   .saved {
-    font-family: $Smallfont;
-    font-size: $smallish;
+    font-family: $light;
+    font-size: $six;
     letter-spacing: 2px;
-    color: $textc;
+    color: $white;
     margin: 0px auto;
     width: 100%;
     text-align: right;
-  }
+  @include size(tablet) {
+    margin-top: 60px;
+    text-align: center;
+    }
 }
 .saved-item-cont {
   display: flex;
@@ -310,45 +384,53 @@ body {
   align-items: center;
   justify-content: flex-end;
   width: 100%;
+  @include size(tablet) {
+    align-items: center;
+    }
+  
 }
 .saved-item {
-  font-family: $Smallfont;
+  font-family: $light;
   font-size: 16px;
   letter-spacing: 3px;
-  color: $textc;
+  color: $white;
   margin: 10px auto;
   text-align: right;
   width: 100%;
+  @include size(tablet) {
+    text-align: center;
+    margin-top: 15px;
+    }
 }
 .save {
   display: flex;
   justify-content: flex-end;
   margin: 50px auto;
-  border: 3px solid $textc;
+  border: 3px solid $white;
 }
 
 #save {
-  font-family: $regfont;
-  font-size: $smallish;
+  font-family: $regular;
+  font-size: $six;
   letter-spacing: 2px;
-  color: $blacktext;
+  color: $black;
   margin: 0px auto;
   padding: 5px 7px;
-  background-color: $textc;
+  background-color: $white;
   width: 100%;
-  text-align: right;
+  
 }
-
+}
 .calc-button {
   display: flex;
   justify-content: center;
   align-items: center;
-  font-family: $regfont;
-  font-size: $titletext;
-  color: $blacktext;
+  font-family: $regular;
+  font-size: $fourth;
+  color: $black;
   width: 73px;
   height: 110px;
-  background-color: $textc;
+  background-color: $white;
   outline: 0.1px solid rgb(98, 98, 98);
   margin: 0px auto;
   cursor: pointer;
@@ -358,12 +440,12 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  font-family: $regfont;
-  font-size: $titletext;
-  color: $blacktext;
+  font-family: $regular;
+  font-size: $fourth;
+  color: $black;
   width: 73px * 2;
   height: 110px;
-  background-color: $textc;
+  background-color: $white;
   outline: 0.1px solid rgba(0, 0, 0, 0.5);
   margin: 0px auto;
   cursor: pointer;
@@ -372,12 +454,12 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  font-family: $regfont;
-  font-size: $titletext;
-  color: $blacktext;
+  font-family: $regular;
+  font-size: $fourth;
+  color: $black;
   width: 73px * 3;
   height: 110px;
-  background-color: $textc;
+  background-color: $white;
   outline: 0.1px solid rgba(0, 0, 0, 0.5);
   margin: 0px auto;
   cursor: pointer;
@@ -389,17 +471,17 @@ body {
   align-items: center;
   width: 73px * 5;
   height: 110px;
-  background-color: $textc;
+  background-color: $white;
   outline: 0.1px solid rgba(0, 0, 0, 0.5);
-  margin-top: 10px;
+  
   #answerspace {
     width: 90%;
     display: flex;
     justify-content: flex-end;
     align-items: flex-end;
-    font-family: $regfont;
-    font-size: $largetext;
-    color: $blacktext;
+    font-family: $regular;
+    font-size: $second;
+    color: $black;
   }
 }
 
@@ -423,12 +505,15 @@ body {
     width: 100%;
   }
   #zero {
-    background-color: $textc;
+    background-color: $white;
   }
   #toptitle {
     display: flex;
     justify-content: center;
   }
+  @include size(tablet) {
+    width: 100%;
+    }
 }
 
 //timer
@@ -444,10 +529,14 @@ body {
   }
   .theclock {
     //font
-    font-family: $TITLEfontfamily;
-    font-size: $largestsize;
-    color: $textc;
+    font-family: $bold;
+    font-size: $first;
+    color: $white;
     margin: 0px auto;
+    width: 100%;
+    @include size(phone) {
+      font-size: $second;
+      }
     h1 {
       margin: 0px auto;
     }
@@ -462,27 +551,53 @@ body {
   .resets h6,
   .labels h6,
   .minus h6 {
-    font-family: $Smallfont;
-    font-size: $smallish;
+    font-family: $light
+  ;
+    font-size: $six;
     letter-spacing: 1px;
-    color: $textc;
+    color: $white;
+    @include size(phone) {
+      font-size: $seven;
+      }
   }
   .resets h6 {
     margin: 0px 80px;
     margin-bottom: 20px;
+    @include size(phone) {
+      margin: 0px 65px;
+      }
   }
   .labels h6 {
     margin: 0px 85px;
     margin-bottom: 70px;
+    @include size(phone) {
+      margin: 0px 65px;
+      }
   }
   .minus h6 {
     margin: 20px 82px;
+    @include size(phone) {
+      margin: 20px 65px;
+      }
   }
 
   .timer-controls {
+    width: 100%;
     display: flex;
     justify-content: center;
     margin: 0px auto;
+    @include size(phone) {
+      flex-direction: column;
+      align-items: center;
+      }
+      button {
+        margin: 0px auto;
+        @include size(phone) {
+          margin: 20px auto;
+          width: 75px;
+          height: 75px;
+          }
+      }
     .circle {
       display: flex;
       width: 91px;
@@ -490,14 +605,10 @@ body {
       border-radius: 50%;
       align-items: center;
       justify-content: center;
-      border: 3px solid $textc;
+      border: 3px solid $white;
       margin: 0px 50px;
-
-      //font
-      font-family: $Smallfont;
-      font-size: $smallish;
-      color: $textc;
     }
+    
   }
 }
 
@@ -508,14 +619,15 @@ button {
   border-radius: 50%;
   align-items: center;
   justify-content: center;
-  border: 4px solid $textc;
+  border: 4px solid $white;
   margin: 0px 50px;
   background-color: rgba(0, 0, 0, 0);
 
   //font
-  font-family: $Smallfont;
-  font-size: $smallish;
-  color: $textc;
+  font-family: $light
+;
+  font-size: $six;
+  color: $white;
 }
 .timer-controls {
   display: flex;
@@ -529,14 +641,9 @@ button {
     border-radius: 50%;
     align-items: center;
     justify-content: center;
-    border: 4px solid $textc;
+    border: 4px solid $white;
     margin: 0px 50px;
     background-color: rgba(0, 0, 0, 0);
-
-    //font
-    font-family: $Smallfont;
-    font-size: $smallish;
-    color: $textc;
   }
 }
 
@@ -553,12 +660,23 @@ button {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: $medium;
-  font-family: $Smallfont;
+  font-size: $fifth;
+  font-family: $light
+;
   letter-spacing: 2px;
-  color: $textc;
+  color: $white;
   h5 {
     margin: 10px auto;
+  }
+}
+#stop-cont {
+  margin-top: 50px;  
+}
+
+#play, #stop, #pause, #get, #reset {
+  margin: 0px 30px;
+  @include size(phone) {
+    margin: 20px auto;
   }
 }
 //todo
@@ -577,10 +695,11 @@ button {
 }
 #todolist {
   list-style-type: none;
-  font-size: $smallish;
-  font-family: $Smallfont;
+  font-size: $six;
+  font-family: $light
+;
   letter-spacing: 1px;
-  color: $textc;
+  color: $white;
   text-align: center;
 
   li {
@@ -590,19 +709,21 @@ button {
 }
 
 .newItem  {
-  font-size: $smallish;
-  font-family: $Smallfont;
+  font-size: $six;
+  font-family: $light
+;
   letter-spacing: 1px;
-  color: $textc;
+  color: $white;
   text-align: center;
   margin: 5px auto;
 }
 .cross-out {
-    font-size: $smallish;
-    font-family: $Smallfont;
+    font-size: $six;
+    font-family: $light
+  ;
     text-decoration: line-through;
     letter-spacing: 1px;
-    color: $textc;
+    color: $white;
     text-align: center;
     margin: 5px auto;
 }
@@ -617,22 +738,23 @@ form {
 input {
   border: none;
   border-style: none;
-  border-bottom: 2px solid $textc;
+  border-bottom: 2px solid $white;
   width: 60%;
   background-color: rgba(0, 0, 0, 0);
   margin-top: 90px;
 }
 input[type="text"] {
   text-align: center;
-  font-size: $smallish;
-  font-family: $Smallfont;
+  font-size: $six;
+  font-family: $light
+;
   letter-spacing: 2px;
-  color: $textc;
+  color: $white;
   box-shadow: none;
   padding: 5px;
 }
 input::placeholder {
-  color: $textc;
+  color: $white;
 
 }
 

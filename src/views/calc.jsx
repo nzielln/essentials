@@ -62,6 +62,9 @@ class Calc extends React.Component {
         <h2 className="title top">calculator</h2>
         <div className="buttonspace">
           <div className="calc-space">
+            <div className="answer">
+              <div id="answerspace">{this.state.input}</div>
+            </div>
             <div className="row1">
               <div
                 className="calc-button"
@@ -164,9 +167,7 @@ class Calc extends React.Component {
                 AC
               </div>
             </div>
-            <div className="answer">
-              <div id="answerspace">{this.state.input}</div>
-            </div>
+
           </div>
           <div className="saved-cont">
             <h6 className="saved">Saved</h6>
