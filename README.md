@@ -2,9 +2,12 @@
 This web application consists of five "essential" apps: a weather, timer, stopwatch, calculator and to do list app.
 
 ## Technologies
-ReactJS
-CSS3 and SASS
-HTML
+1. ReactJS
+2. CSS3 and SASS
+3. HTML
+
+
+
 
 
 
