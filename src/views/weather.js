@@ -34,11 +34,14 @@ class Weather extends React.Component {
           })
           .then(ourdata => {
             console.log(ourdata);
+            let low = Math.floor(ourdata.daily.data[0].temperatureMin)
+            let ave = Math.floor(ourdata.currently.temperature)
+            let high = Math.floor(ourdata.daily.data[0].temperatureMax)
             this.setState({
               icon: ourdata.daily.data[0].icon,
-              temperature: ourdata.currently.temperature,
-              temperatureHigh: ourdata.daily.data[0].temperatureMax,
-              temperatureLow: ourdata.daily.data[0].temperatureMin
+              temperature: ave,
+              temperatureHigh: high,
+              temperatureLow: low
             });
           });
       });

@@ -179,7 +179,7 @@ class Calc extends React.Component {
 
             <div className="save">
               <p id="save" onClick={this.setArray}>
-                saved
+                save
               </p>
             </div>
           </div>

@@ -161,6 +161,7 @@ body {
 .icons {
   display: flex;
   justify-content: space-between;
+  margin-bottom: 100px;
 }
 @media (max-width: 996px) {
   .icons {
@@ -288,6 +289,7 @@ body {
 }
 .weather-all-bottom .typedeg {
   margin-top: 20px;
+  margin-bottom: 50px;
 }
 @media (max-width: 600px) {
   .weather-all-bottom {
@@ -497,9 +499,17 @@ body {
   margin: 0px auto;
   width: 100%;
 }
-@media (max-width: 600px) {
+@media (max-width: 768px) {
   .alltimer .theclock {
     font-size: 54px;
+  }
+}
+.alltimer .theclock h1 {
+  margin: 0px auto;
+}
+@media (max-width: 600px) {
+  .alltimer .theclock {
+    font-size: 42px;
   }
 }
 .alltimer .theclock h1 {
@@ -533,7 +543,7 @@ body {
 }
 @media (max-width: 600px) {
   .alltimer .resets h6 {
-    margin: 0px 65px;
+    margin: 0px 50px;
   }
 }
 .alltimer .labels h6 {
@@ -542,7 +552,7 @@ body {
 }
 @media (max-width: 600px) {
   .alltimer .labels h6 {
-    margin: 0px 65px;
+    margin: 0px 50px;
   }
 }
 .alltimer .minus h6 {
@@ -550,7 +560,7 @@ body {
 }
 @media (max-width: 600px) {
   .alltimer .minus h6 {
-    margin: 20px 65px;
+    margin: 20px 50px;
   }
 }
 .alltimer .timer-controls {

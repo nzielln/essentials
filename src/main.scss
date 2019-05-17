@@ -215,6 +215,7 @@ body {
 .icons {
   display: flex;
   justify-content: space-between;
+  margin-bottom: 100px;
           @include size(small-laptop) {
             width: 100%;
             flex-direction: column;
@@ -335,6 +336,7 @@ body {
   }
   .typedeg {
     margin-top: 20px;
+    margin-bottom: 50px;
   }
   @include size(phone) {
     width: 100%;
@@ -534,8 +536,14 @@ body {
     color: $white;
     margin: 0px auto;
     width: 100%;
-    @include size(phone) {
+    @include size(tablet) {
       font-size: $second;
+      }
+    h1 {
+      margin: 0px auto;
+    }
+    @include size(phone) {
+      font-size: 42px;
       }
     h1 {
       margin: 0px auto;
@@ -551,8 +559,7 @@ body {
   .resets h6,
   .labels h6,
   .minus h6 {
-    font-family: $light
-  ;
+    font-family: $light;
     font-size: $six;
     letter-spacing: 1px;
     color: $white;
@@ -560,24 +567,25 @@ body {
       font-size: $seven;
       }
   }
+  
   .resets h6 {
     margin: 0px 80px;
     margin-bottom: 20px;
     @include size(phone) {
-      margin: 0px 65px;
+      margin: 0px 50px;
       }
   }
   .labels h6 {
     margin: 0px 85px;
     margin-bottom: 70px;
     @include size(phone) {
-      margin: 0px 65px;
+      margin: 0px 50px;
       }
   }
   .minus h6 {
     margin: 20px 82px;
     @include size(phone) {
-      margin: 20px 65px;
+      margin: 20px 50px;
       }
   }
 
