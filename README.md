@@ -1,3 +1,16 @@
+# Essentials - Web Application
+This web application consists of five "essential" apps: a weather, timer, stopwatch, calculator and to do list app.
+
+## Technologies
+1. ReactJS
+2. CSS3 and SASS
+3. HTML
+
+
+
+
+
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
